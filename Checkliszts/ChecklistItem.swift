@@ -15,4 +15,4 @@ class ChecklistItem {
         self.text = text
         self.isChecked = isChecked
     }
-}
+}   
