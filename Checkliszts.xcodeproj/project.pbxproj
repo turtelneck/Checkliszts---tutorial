@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4995B2322BE6E36500065050 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995B2312BE6E36500065050 /* ChecklistItem.swift */; };
 		49B6DA2A2BE6B6E3002B1F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6DA292BE6B6E3002B1F90 /* AppDelegate.swift */; };
 		49B6DA2C2BE6B6E3002B1F90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6DA2B2BE6B6E3002B1F90 /* SceneDelegate.swift */; };
 		49B6DA2E2BE6B6E3002B1F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B6DA2D2BE6B6E3002B1F90 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4995B2312BE6E36500065050 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		49B6DA262BE6B6E3002B1F90 /* Checkliszts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkliszts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B6DA292BE6B6E3002B1F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B6DA2B2BE6B6E3002B1F90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				49B6DA322BE6B6E4002B1F90 /* Assets.xcassets */,
 				49B6DA342BE6B6E4002B1F90 /* LaunchScreen.storyboard */,
 				49B6DA372BE6B6E4002B1F90 /* Info.plist */,
+				4995B2312BE6E36500065050 /* ChecklistItem.swift */,
 			);
 			path = Checkliszts;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				49B6DA2E2BE6B6E3002B1F90 /* ViewController.swift in Sources */,
 				49B6DA2A2BE6B6E3002B1F90 /* AppDelegate.swift in Sources */,
 				49B6DA2C2BE6B6E3002B1F90 /* SceneDelegate.swift in Sources */,
+				4995B2322BE6E36500065050 /* ChecklistItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,13 +296,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7AAH5V5L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Checkliszts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,13 +323,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N7AAH5V5L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Checkliszts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
