@@ -16,18 +16,6 @@ class ChecklistViewController: UITableViewController {
     var item2 = ChecklistItem("pickle pop", false)
     var item3 = ChecklistItem("pompous populist polyglots", true)
     var item4 = ChecklistItem("call mom", false)
-    
-    // MARK: - Actions
-    @IBAction func addItem() {
-        let newRowIndex = items.count
-
-        let item = ChecklistItem("I am a new row", false)
-        items.append(item)
-
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +52,7 @@ class ChecklistViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Tabel View Delegate
+    // MARK: - Table View Delegate
     override func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
@@ -91,5 +79,31 @@ class ChecklistViewController: UITableViewController {
         let label = cell.viewWithTag(1000) as! UILabel
         label.text = item.text
     }
+    
+    // MARK: - Actions
+    @IBAction func addItem() {
+        let newRowIndex = items.count
+
+        let item = ChecklistItem("I am a new row", false)
+        items.append(item)
+
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+    
+    override func tableView(
+      _ tableView: UITableView,
+      commit editingStyle: UITableViewCell.EditingStyle,
+      forRowAt indexPath: IndexPath
+    ) {
+      // 1
+      items.remove(at: indexPath.row)
+
+      // 2
+      let indexPaths = [indexPath]
+      tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+
 }
 
