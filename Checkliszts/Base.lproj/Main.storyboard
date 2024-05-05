@@ -47,12 +47,14 @@
                     <navigationItem key="navigationItem" title="Checkliszts" id="aLj-rM-S1I">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zWB-kJ-es2">
                             <connections>
+                                <action selector="doneBarButton:" destination="GqN-hr-A8w" id="QVh-Vf-DeY"/>
                                 <segue destination="5sK-mK-LCD" kind="show" id="kHH-Mw-3pc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5W-Zv-wxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GqN-hr-A8w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="694" y="-219"/>
         </scene>
@@ -74,12 +76,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Remind me to..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpL-hD-Uly">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Remind me to..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EpL-hD-Uly">
                                                     <rect key="frame" x="20" y="4" width="353" height="22.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="5sK-mK-LCD" eventType="editingDidEndOnExit" id="Ygq-7w-BhN"/>
+                                                        <outlet property="delegate" destination="5sK-mK-LCD" id="c6Q-Vk-4M6"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -105,13 +108,14 @@
                                 <action selector="cancel" destination="5sK-mK-LCD" id="WK0-fo-7DM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="taI-Ld-xCr">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="taI-Ld-xCr">
                             <connections>
                                 <action selector="done" destination="5sK-mK-LCD" id="ytw-9S-kxQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="taI-Ld-xCr" id="gHN-6m-hKJ"/>
                         <outlet property="textField" destination="EpL-hD-Uly" id="UHh-DR-bzc"/>
                     </connections>
                 </tableViewController>

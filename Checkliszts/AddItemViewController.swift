@@ -7,9 +7,10 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
+class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,26 @@ class AddItemViewController: UITableViewController {
         willSelectRowAt indexPath: IndexPath
     ) -> IndexPath? {
         return nil
+    }
+    
+    // MARK: - Text View Delegates
+    func textField(
+        _ textfield: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        let oldText = textField.text!
+        print("The oldText variable: \(oldText)!")
+        let stringRange = Range(range, in: oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        print("I've made it past all the text unwrappings")
+        doneBarButton.isEnabled = !newText.isEmpty
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+      doneBarButton.isEnabled = false
+      return true
     }
     
     // MARK: - Actions
