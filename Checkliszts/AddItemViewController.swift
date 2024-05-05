@@ -15,12 +15,20 @@ class AddItemViewController: UITableViewController {
         navigationItem.largeTitleDisplayMode = .never
     }
     
+    // MARK: - Table View Delegates
+    override func tableView(
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath? {
+        return nil
+    }
+    
     // MARK: - Actions
     @IBAction func cancel() {
-      navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 
     @IBAction func done() {
-      navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
