@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: AnyObject {
+    func addItemViewControllerDidCancel(
+        _ controller: AddItemViewController)
+    func addItemViewController(
+        _ controller: AddItemViewController,
+        didFinishAdding item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
+    
+    weak var delegate: AddItemViewControllerDelegate?
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -38,26 +48,26 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         let oldText = textField.text!
-        print("The oldText variable: \(oldText)!")
         let stringRange = Range(range, in: oldText)!
         let newText = oldText.replacingCharacters(in: stringRange, with: string)
-        print("I've made it past all the text unwrappings")
         doneBarButton.isEnabled = !newText.isEmpty
         return true
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-      doneBarButton.isEnabled = false
-      return true
+        doneBarButton.isEnabled = false
+        return true
     }
     
     // MARK: - Actions
     @IBAction func cancel() {
-        navigationController?.popViewController(animated: true)
+        delegate?.addItemViewControllerDidCancel(self)
     }
 
     @IBAction func done() {
-        print("Contents of the text field: \(textField.text!)")
-        navigationController?.popViewController(animated: true)
+        let item = ChecklistItem(textField.text!, false)
+        item.text = textField.text!
+
+        delegate?.addItemViewController(self, didFinishAdding: item)
     }
 }
