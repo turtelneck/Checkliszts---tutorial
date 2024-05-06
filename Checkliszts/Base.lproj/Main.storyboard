@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WPm-Fy-P3R">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,31 +12,42 @@
             <objects>
                 <tableViewController id="itX-bx-Ks3" customClass="ChecklistViewController" customModule="Checkliszts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lVG-Zu-SZu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="2qQ-RY-cTj">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="2qQ-RY-cTj">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2qQ-RY-cTj" id="Ox6-c4-q5T">
-                                    <rect key="frame" x="0.0" y="0.0" width="349" height="44.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="316.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-6y-X11">
-                                            <rect key="frame" x="20" y="11.000000000000002" width="321" height="21.666666666666671"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-BW-Csj">
+                                            <rect key="frame" x="16" y="8.5" width="13" height="27"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-6y-X11">
+                                            <rect key="frame" x="37" y="11" width="263.5" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8T9-6y-X11" firstAttribute="top" secondItem="Ox6-c4-q5T" secondAttribute="topMargin" id="JMr-n8-9Wl"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="8T9-6y-X11" secondAttribute="bottom" constant="0.67000000000000004" id="Sws-uH-ktC"/>
-                                        <constraint firstItem="8T9-6y-X11" firstAttribute="leading" secondItem="Ox6-c4-q5T" secondAttribute="leadingMargin" id="oCD-dW-9lA"/>
-                                        <constraint firstItem="8T9-6y-X11" firstAttribute="trailing" secondItem="Ox6-c4-q5T" secondAttribute="trailingMargin" id="srK-F5-NTT"/>
+                                        <constraint firstItem="g2L-BW-Csj" firstAttribute="centerY" secondItem="8T9-6y-X11" secondAttribute="centerY" id="BX5-4M-Ooc"/>
+                                        <constraint firstItem="g2L-BW-Csj" firstAttribute="leading" secondItem="Ox6-c4-q5T" secondAttribute="leading" constant="16" id="FaD-a5-Zjf"/>
+                                        <constraint firstItem="8T9-6y-X11" firstAttribute="top" secondItem="Ox6-c4-q5T" secondAttribute="top" constant="11" id="Hk9-B2-awA"/>
+                                        <constraint firstAttribute="bottom" secondItem="8T9-6y-X11" secondAttribute="bottom" constant="11" id="MVa-3f-DeC"/>
+                                        <constraint firstItem="8T9-6y-X11" firstAttribute="leading" secondItem="g2L-BW-Csj" secondAttribute="trailing" constant="8" id="R9d-iW-j1l"/>
+                                        <constraint firstAttribute="trailing" secondItem="8T9-6y-X11" secondAttribute="trailing" constant="16" id="gkC-p0-SiO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5sK-mK-LCD" kind="show" identifier="EditItem" id="Tyr-P1-8p4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,28 +67,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5W-Zv-wxY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="GqN-hr-A8w" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="694" y="-219"/>
+            <point key="canvasLocation" x="693.89312977099235" y="-219.01408450704227"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="kDK-6U-b1M">
             <objects>
-                <tableViewController id="5sK-mK-LCD" customClass="AddItemViewController" customModule="Checkliszts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5sK-mK-LCD" customClass="ItemDetailViewController" customModule="Checkliszts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="pp4-vt-G8o">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection id="BrR-f3-xBB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="EG0-AQ-BGf">
-                                        <rect key="frame" x="0.0" y="18" width="393" height="32"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EG0-AQ-BGf" id="1Ub-Lw-rYf">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Remind me to..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EpL-hD-Uly">
-                                                    <rect key="frame" x="20" y="4" width="353" height="22.333333333333332"/>
+                                                    <rect key="frame" x="20" y="4" width="335" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -129,7 +140,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WPm-Fy-P3R" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bmo-OX-yOE">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -142,6 +153,9 @@
             <point key="canvasLocation" x="-118.32061068702289" y="-219.01408450704227"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tyr-P1-8p4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
