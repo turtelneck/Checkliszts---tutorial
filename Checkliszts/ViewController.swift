@@ -28,6 +28,46 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    // MARK: - Navigation
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
+        if segue.identifier == "AddItem" {
+            let controller = segue.destination as! ItemDetailViewController
+            controller.delegate = self
+        } else if segue.identifier == "EditItem" {
+            let controller = segue.destination as! ItemDetailViewController
+            controller.delegate = self
+            
+            if let indexPath = tableView.indexPath(
+                for: sender as! UITableViewCell) {
+                controller.itemToEdit = items[indexPath.row]
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    func configureCheckmark(
+        for cell: UITableViewCell,
+        with item: ChecklistItem
+    ) {
+        let label = cell.viewWithTag(1001) as! UILabel
+        if item.isChecked{
+            label.text = "√"
+        } else {
+            label.text = ""
+        }
+    }
+    
+    func configureText(
+        for cell: UITableViewCell,
+        with item: ChecklistItem
+    ) {
+        let label = cell.viewWithTag(1000) as! UILabel
+        label.text = item.text
+    }
+    
     // MARK: - Table View Data Source
     override func tableView(
         _ tableView: UITableView,
@@ -48,6 +88,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
+        
         return cell
     }
     
@@ -64,34 +105,19 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func configureCheckmark(
-        for cell: UITableViewCell,
-        with item: ChecklistItem
-    ) {
-        let label = cell.viewWithTag(1001) as! UILabel
-        label.text = item.isChecked ? "√" : ""
-    }
-    
-    func configureText(
-        for cell: UITableViewCell,
-        with item: ChecklistItem
-    ) {
-        let label = cell.viewWithTag(1000) as! UILabel
-        label.text = item.text
-    }
-    
-    // MARK: - Actions
     override func tableView( // deletes rows
         _ tableView: UITableView,
         commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath
     ) {
+        // 1
         items.remove(at: indexPath.row)
 
+        // 2
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
-    
+        
     // MARK: - ItemDetailViewController Delegates
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
@@ -121,23 +147,6 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
             }
         }
         navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddItem" {
-            let controller = segue.destination as! ItemDetailViewController
-            controller.delegate = self
-        } else if segue.identifier == "EditItem" {
-            let controller = segue.destination as! ItemDetailViewController
-            controller.delegate = self
-            
-            if let indexPath = tableView.indexPath(
-                for: sender as! UITableViewCell
-            ) {
-                controller.itemToEdit = items[indexPath.row]
-            }
-        }
     }
 }
 

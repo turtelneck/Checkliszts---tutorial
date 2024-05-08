@@ -49,7 +49,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5sK-mK-LCD" kind="show" identifier="EditItem" id="Tyr-P1-8p4"/>
+                                    <segue destination="5sK-mK-LCD" kind="show" trigger="accessoryAction" id="XQn-3E-hIA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,7 +157,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tyr-P1-8p4"/>
+        <segue reference="XQn-3E-hIA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
