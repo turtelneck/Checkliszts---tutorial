@@ -9,23 +9,12 @@ import UIKit
 
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     var items = [ChecklistItem]()
-    
-    var item0 = ChecklistItem("poop", false)
-    var item1 = ChecklistItem("pee", false)
-    var item2 = ChecklistItem("pickle pop", false)
-    var item3 = ChecklistItem("pompous populist polyglots", true)
-    var item4 = ChecklistItem("call mom", false)
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        items.append(item0)
-        items.append(item1)
-        items.append(item2)
-        items.append(item3)
-        items.append(item4)
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        loadChecklistItems()
         print("Documents folder is \(documentsDirectory())")
         print("Data file path is \(dataFilePath())")
     }
@@ -190,5 +179,21 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         }
     }
     
-    
+    func loadChecklistItems() {
+        // 1
+        let path = dataFilePath()
+        // 2
+        if let data = try? Data(contentsOf: path) {
+            // 3
+            let decoder = PropertyListDecoder()
+            do {
+                // 4
+                items = try decoder.decode(
+                    [ChecklistItem].self,
+                    from: data)
+            } catch {
+                print("Error decoding item from array: \(error.localizedDescription)")
+            }
+        }
+    }
 }
