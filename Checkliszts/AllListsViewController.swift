@@ -10,9 +10,23 @@ import UIKit
 class AllListsViewController: UITableViewController {
     
     let cellIdentifier = "ChecklistCell"
+    var lists = [Checkliszt]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var list = Checkliszt(name: "Pooppina")
+        lists.append(list)
+
+        list = Checkliszt(name: "Pooperaustichoff")
+        lists.append(list)
+
+        list = Checkliszt(name: "Pooperino")
+        lists.append(list)
+
+        list = Checkliszt(name: "Pooperazzolini")
+        lists.append(list)
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -22,7 +36,7 @@ class AllListsViewController: UITableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 3
+        return lists.count
     }
 
     override func tableView(
@@ -30,8 +44,12 @@ class AllListsViewController: UITableViewController {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel!.text = "List \(indexPath.row)"
+            withIdentifier: cellIdentifier, 
+            for: indexPath)
+        let checklist = lists[indexPath.row]
+        cell.textLabel!.text = checklist.name
+        cell.accessoryType = .detailDisclosureButton
+        
         return cell
     }
     
