@@ -9,10 +9,12 @@ import UIKit
 
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     var items = [ChecklistItem]()
+    var checklist: Checkliszt!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = checklist.name
         navigationItem.largeTitleDisplayMode = .never
         loadChecklistItems()
         print("Documents folder is \(documentsDirectory())")
