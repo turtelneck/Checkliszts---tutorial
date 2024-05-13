@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49864FD82BF19098006629B5 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49864FD72BF19098006629B5 /* ListDetailViewController.swift */; };
 		498ED1412BEAE1CE00FC5416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B6DA2F2BE6B6E3002B1F90 /* Main.storyboard */; };
 		4994B6FA2BED8CEE00680530 /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4994B6F92BED8CEE00680530 /* AllListsViewController.swift */; };
 		4995B2322BE6E36500065050 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4995B2312BE6E36500065050 /* ChecklistItem.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49864FD72BF19098006629B5 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		4994B6F92BED8CEE00680530 /* AllListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		4995B2312BE6E36500065050 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		49AA9A2B2BED96BE00A36CBE /* Checkliszt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkliszt.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				49BC1A962BE7079100C0E963 /* AddItemViewController.swift */,
 				4994B6F92BED8CEE00680530 /* AllListsViewController.swift */,
 				49AA9A2B2BED96BE00A36CBE /* Checkliszt.swift */,
+				49864FD72BF19098006629B5 /* ListDetailViewController.swift */,
 			);
 			path = Checkliszts;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				49B6DA2C2BE6B6E3002B1F90 /* SceneDelegate.swift in Sources */,
 				49AA9A2C2BED96BE00A36CBE /* Checkliszt.swift in Sources */,
 				4995B2322BE6E36500065050 /* ChecklistItem.swift in Sources */,
+				49864FD82BF19098006629B5 /* ListDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
