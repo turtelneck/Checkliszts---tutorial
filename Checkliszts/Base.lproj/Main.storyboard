@@ -143,7 +143,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5sK-mK-LCD" kind="show" trigger="accessoryAction" id="XQn-3E-hIA"/>
+                                    <segue destination="5sK-mK-LCD" kind="show" identifier="EditItem" trigger="accessoryAction" id="XQn-3E-hIA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
