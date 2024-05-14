@@ -29,6 +29,12 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Add placeholder item data
+        for list in lists {
+          let item = ChecklistItem("Item for \(list.name)", false)
+          list.items.append(item)
+        }
     }
 
     // MARK: - Table view data source
