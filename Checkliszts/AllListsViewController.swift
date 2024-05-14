@@ -23,7 +23,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         
         navigationController?.delegate = self
         
-        let index = UserDefaults.standard.integer(forKey: "ChecklistIndex")
+        let index = dataModel.indexOfSelectedList
         if index != -1 {
             let checklist = dataModel.lists[index]
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
@@ -69,7 +69,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        UserDefaults.standard.set(indexPath.row, forKey: "ChecklistIndex")
+        dataModel.indexOfSelectedList = indexPath.row
         let checklist = dataModel.lists[indexPath.row]
         performSegue(
             withIdentifier: "ShowChecklist",
@@ -120,7 +120,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         animated: Bool
     ) {
         if viewController === self {
-            UserDefaults.standard.set(-1, forKey: "ChecklistIndex")
+            dataModel.indexOfSelectedList = -1
         }
     }
     
@@ -134,6 +134,4 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             controller.delegate = self
         }
     }
-    
-    // MARK: - For Saving File
 }

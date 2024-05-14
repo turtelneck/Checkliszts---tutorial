@@ -10,6 +10,15 @@ import Foundation
 class DataModel {
     var lists = [Checkliszt]()
     
+    var indexOfSelectedList: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "ChecklistIndex")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "ChecklistIndex")
+        }
+    }
+    
     init() {
         loadChecklists()
         registerDefaults()
