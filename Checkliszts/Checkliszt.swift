@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Checkliszt: NSObject {
+class Checkliszt: NSObject, Codable {
     var name = ""
     var items = [ChecklistItem]()
     
