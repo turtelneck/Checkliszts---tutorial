@@ -68,21 +68,45 @@
 		49B6DA282BE6B6E3002B1F90 /* Checkliszts */ = {
 			isa = PBXGroup;
 			children = (
+				49D9E8EC2BF3F6CE00ADB39E /* View Controllers */,
+				49D9E8EB2BF3F6C700ADB39E /* Data Models */,
+				49D9E8ED2BF3F6DE00ADB39E /* Resources */,
 				49B6DA292BE6B6E3002B1F90 /* AppDelegate.swift */,
-				49B6DA2B2BE6B6E3002B1F90 /* SceneDelegate.swift */,
-				49B6DA2D2BE6B6E3002B1F90 /* ViewController.swift */,
-				49B6DA2F2BE6B6E3002B1F90 /* Main.storyboard */,
-				49B6DA322BE6B6E4002B1F90 /* Assets.xcassets */,
-				49B6DA342BE6B6E4002B1F90 /* LaunchScreen.storyboard */,
 				49B6DA372BE6B6E4002B1F90 /* Info.plist */,
-				4995B2312BE6E36500065050 /* ChecklistItem.swift */,
-				49BC1A962BE7079100C0E963 /* AddItemViewController.swift */,
-				4994B6F92BED8CEE00680530 /* AllListsViewController.swift */,
-				49AA9A2B2BED96BE00A36CBE /* Checkliszt.swift */,
-				49864FD72BF19098006629B5 /* ListDetailViewController.swift */,
-				4910B9B92BF2F0C600610C76 /* DataModel.swift */,
+				49B6DA2B2BE6B6E3002B1F90 /* SceneDelegate.swift */,
 			);
 			path = Checkliszts;
+			sourceTree = "<group>";
+		};
+		49D9E8EB2BF3F6C700ADB39E /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				4995B2312BE6E36500065050 /* ChecklistItem.swift */,
+				49AA9A2B2BED96BE00A36CBE /* Checkliszt.swift */,
+				4910B9B92BF2F0C600610C76 /* DataModel.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		49D9E8EC2BF3F6CE00ADB39E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49BC1A962BE7079100C0E963 /* AddItemViewController.swift */,
+				4994B6F92BED8CEE00680530 /* AllListsViewController.swift */,
+				49864FD72BF19098006629B5 /* ListDetailViewController.swift */,
+				49B6DA2D2BE6B6E3002B1F90 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		49D9E8ED2BF3F6DE00ADB39E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49B6DA322BE6B6E4002B1F90 /* Assets.xcassets */,
+				49B6DA342BE6B6E4002B1F90 /* LaunchScreen.storyboard */,
+				49B6DA2F2BE6B6E3002B1F90 /* Main.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
