@@ -21,6 +21,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         super.viewDidAppear(animated)
         
         navigationController?.delegate = self
+        dataModel.saveChecklists()
         
         let index = dataModel.indexOfSelectedList
         if index >= 0 && index < dataModel.lists.count {
