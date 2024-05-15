@@ -76,7 +76,6 @@
 				49B6DA292BE6B6E3002B1F90 /* AppDelegate.swift */,
 				49B6DA372BE6B6E4002B1F90 /* Info.plist */,
 				49B6DA2B2BE6B6E3002B1F90 /* SceneDelegate.swift */,
-				49D9E8EE2BF51FA700ADB39E /* IconPickerViewController.swift */,
 			);
 			path = Checkliszts;
 			sourceTree = "<group>";
@@ -94,6 +93,7 @@
 		49D9E8EC2BF3F6CE00ADB39E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				49D9E8EE2BF51FA700ADB39E /* IconPickerViewController.swift */,
 				49BC1A962BE7079100C0E963 /* AddItemViewController.swift */,
 				4994B6F92BED8CEE00680530 /* AllListsViewController.swift */,
 				49864FD72BF19098006629B5 /* ListDetailViewController.swift */,
