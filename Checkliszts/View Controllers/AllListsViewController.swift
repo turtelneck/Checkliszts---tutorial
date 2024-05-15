@@ -28,6 +28,11 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             performSegue(withIdentifier: "ShowChecklist", sender: checklist)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
     override func tableView(
@@ -62,9 +67,14 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         }
         
         let checklist = dataModel.lists[indexPath.row]
+        let count = checklist.countUncheckedItems()
         cell.textLabel!.text = checklist.name
         cell.accessoryType = .detailDisclosureButton
-        cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaining"
+        if checklist.items.count == 0 {
+          cell.detailTextLabel!.text = "(No Items)"
+        } else {
+          cell.detailTextLabel!.text = count == 0 ? "All Done!" : "\(count) Remaining"
+        }
         
         return cell
     }
