@@ -54,6 +54,14 @@ class DataModel {
         }
     }
     
+    //MARK: Notifs
+    class func nextChecklistItemID() -> Int {
+        let userDefaults = UserDefaults.standard
+        let itemID = userDefaults.integer(forKey: "ChecklistItemID")
+        userDefaults.set(itemID + 1, forKey: "ChecklistItemID")
+        return itemID
+    }
+    
     //MARK: For Saving Checklists
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(
