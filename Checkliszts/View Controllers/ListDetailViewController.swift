@@ -64,7 +64,7 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
         _ tableView: UITableView,
         willSelectRowAt indexPath: IndexPath
     ) -> IndexPath? {
-        return nil
+        return indexPath.section == 1 ? indexPath : nil
     }
     
     // MARK: - Text Field Delegates
