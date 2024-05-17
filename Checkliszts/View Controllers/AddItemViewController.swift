@@ -27,6 +27,17 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var shouldRemindSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBAction func shouldRemindToggled(_ switchControl: UISwitch) {
+        textField.resignFirstResponder()
+        
+        if switchControl.isOn {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert,.sound]) {
+                _, _ in // do nothing
+            }
+        }
+    }
+    
     weak var delegate: ItemDetailViewControllerDelegate?
     var itemToEdit: ChecklistItem?
     
@@ -58,11 +69,13 @@ class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
             item.text = textField.text!
             item.shouldRemind = shouldRemindSwitch.isOn
             item.dueDate = datePicker.date
+            item.scheduleNotification()
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             let item = ChecklistItem(textField.text!, false)
             item.shouldRemind = shouldRemindSwitch.isOn
             item.dueDate = datePicker.date
+            item.scheduleNotification()
             delegate?.itemDetailViewController(self, didFinishAdding: item)
         }
     }

@@ -304,6 +304,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uPv-E0-DZl">
                                                     <rect key="frame" x="308" y="6" width="51" height="31.5"/>
                                                     <color key="onTintColor" name="AccentColor"/>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="5sK-mK-LCD" eventType="valueChanged" id="yEc-jE-i6g"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
